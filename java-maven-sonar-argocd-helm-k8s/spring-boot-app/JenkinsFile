@@ -6,13 +6,16 @@ pipeline {
     }
   }
   
-  stages {
-    stage('Checkout') {
-      steps {
-        sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
-      }
-    }
+    stages {
+      stage('Checkout') {
+       steps {
+        // Checkout the Git repository before any Git operations
+          git branch: 'main', url: 'https://github.com/singampallinanda/Jenkins-Zero-To-Hero'
+          sh 'pwd'       // Check the current directory to ensure you are inside the repo
+          sh 'ls -l'
+        }
+       }
+
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
