@@ -64,7 +64,8 @@ pipeline {
                       # Set git user configuration
                       git config --global user.email "singampallinanda@gmail.com"
                       git config --global user.name "singampallinanda"
-                      
+                      git config --global --add safe.directory /var/lib/jenkins/jobs/cicd_project/workspace
+
                       # Replace the placeholder with BUILD_NUMBER
                       sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" deployment.yml
                       
