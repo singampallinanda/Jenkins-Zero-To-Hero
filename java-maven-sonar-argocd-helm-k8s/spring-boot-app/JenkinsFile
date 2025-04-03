@@ -10,9 +10,7 @@ pipeline {
       stage('Checkout') {
        steps {
         // Checkout the Git repository before any Git operations
-          git branch: 'main', url: 'https://github.com/singampallinanda/Jenkins-Zero-To-Hero'
-          sh 'pwd'       // Check the current directory to ensure you are inside the repo
-          sh 'ls -l'
+          checkout scm
         }
        }
 
